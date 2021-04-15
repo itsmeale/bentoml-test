@@ -32,13 +32,3 @@ jobs:
       - name: Run tests
         run: |
           poetry run tests
-      - name: Push to GitHub Packages
-        uses: docker/build-push-action@v1
-        with:
-          
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-          
-          registry: docker.pkg.github.com
-          repository: itsmeale/bentoml-test/bentoml-test
-          tag_with_ref: true
